@@ -8,11 +8,11 @@
 		<version>3.2.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.java.HopperReceipt</groupId>
-	<artifactId>HoppersReceipt</artifactId>
+	<groupId>com.java.FruityLoops</groupId>
+	<artifactId>FruityLoops</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>HoppersReceipt</name>
+	<name>FruityLoops</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
@@ -40,19 +40,9 @@
 			<scope>test</scope>
 		</dependency>
 		
+		
+		
 		<dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-jasper</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>jakarta.servlet.jsp.jstl</groupId>
-	        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.glassfish.web</groupId>
-	        <artifactId>jakarta.servlet.jsp.jstl</artifactId>
-    	</dependency>
-    	<dependency>
         <groupId>org.apache.tomcat.embed</groupId>
         <artifactId>tomcat-embed-jasper</artifactId>
     </dependency>
@@ -64,7 +54,13 @@
         <groupId>org.glassfish.web</groupId>
         <artifactId>jakarta.servlet.jsp.jstl</artifactId>
     </dependency>
-    	
+		
+		
+		
+		
+		
+		
+		
 	</dependencies>
 
 	<build>
