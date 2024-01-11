@@ -22,7 +22,7 @@ public class Burger {
  		@GeneratedValue(strategy = GenerationType.IDENTITY)
  		private Long id;
  		@NotNull
- 	 	private String name;
+ 	 	private String burgerName;
  	 	@NotNull
  	 	private String restName;
  	 	@NotNull
@@ -41,8 +41,8 @@ public class Burger {
 	    public Burger(){
 	    	
 	    }
-	    public Burger(String name, String restName, Integer rate,String note) {
-	    	this.name = name;
+	    public Burger(String burgerName, String restName, Integer rate,String note) {
+	    	this.burgerName = burgerName;
 	    	this.restName = restName;
 	    	this.note = note;
 	    	this.rate = rate;	
@@ -53,11 +53,12 @@ public class Burger {
 		public void setId(Long id) {
 			this.id = id;
 		}
-		public String getName() {
-			return name;
+	
+		public String getBurgerName() {
+			return burgerName;
 		}
-		public void setName(String name) {
-			this.name = name;
+		public void setBurgerName(String burgerName) {
+			this.burgerName = burgerName;
 		}
 		public String getRestName() {
 			return restName;

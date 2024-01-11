@@ -28,9 +28,10 @@
 	  	<tbody>
 		    <c:forEach var="burger" items="${burgers}">
 			<tr>
-				<td><c:out value="${burger.name}"/></td>
+				<td><c:out value="${burger.burgerName}"/></td>
 				<td><c:out value="${burger.restName}"/></td>
 				<td><c:out value="${burger.rate}"/></td>
+				<td><a href="/edit/${burger.id}">Edit</a></td>
 			</tr>
 		</c:forEach>
 	  	</tbody>
@@ -41,9 +42,9 @@
 
 	<form:form action="/Burger" method="post" modelAttribute="burger">
 	    <p>
-	        <form:label path="name">Burger Name</form:label>
-	        <form:errors path="name"/>
-	        <form:input path="name"/>
+	        <form:label path="burgerName">Burger Name</form:label>
+	        <form:errors path="burgerName"/>
+	        <form:input path="burgerName"/>
 	    </p>
 	    <p>
 	        <form:label path="restName">Restaurant Name</form:label>
@@ -58,7 +59,7 @@
 	    <p>
 	        <form:label path="note">Note</form:label>
 	        <form:errors path="note"/>
-	        <form:input path="note"/>
+	        <form:input path="note" />
 	    </p>
 	    <input type="submit" value="Submit"/>
 	</form:form>    
