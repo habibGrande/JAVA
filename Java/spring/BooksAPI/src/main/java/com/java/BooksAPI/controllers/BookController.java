@@ -1,5 +1,7 @@
 package com.java.BooksAPI.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +15,12 @@ import com.java.BooksAPI.services.BookService;
 public class BookController {
 	@Autowired
 	BookService bookService;
-	
+	@GetMapping("/books")
+	 public String index(Model model) {
+		 List<Book> book = bookService.allBooks();
+		 model.addAttribute("books",book);
+		 return "table.jsp";
+}
 	
 	
 	 
