@@ -8,17 +8,17 @@
 		<version>3.2.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.java.BooksAPI</groupId>
-	<artifactId>BooksAPI</artifactId>
+	<groupId>com.java.DojoAndNinjas</groupId>
+	<artifactId>DojoAndNinjas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>BooksAPI</name>
+	<name>DojoAndNinjas</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
-		<dependency>
+	<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -86,7 +86,6 @@
             <artifactId>bootstrap</artifactId>
             <version>5.2.3</version>
         </dependency>
-   
 	</dependencies>
 
 	<build>
