@@ -15,7 +15,10 @@ pageEncoding="ISO-8859-1"%>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+		<div>
+			<h1 class="center">Welcome!</h1>
+			<h3 class="center">Join our growing community.</h3>
+		</div>
 	<form:form action="/register" method="post" modelAttribute="newUser">
 
 		<table class="table table-bordered">
@@ -55,7 +58,7 @@ pageEncoding="ISO-8859-1"%>
 	        </th>
 		  
 		      <td>
-		       	<form:input type="password" path="confirm" />
+		       	<form:input  type="password" path="confirm" />
 		       	</td>
 		    </tr>
 		     <tr>
@@ -73,7 +76,7 @@ pageEncoding="ISO-8859-1"%>
 	    <p>
 	        <form:label path="email">Email</form:label>
 	        <form:errors path="email"/>
-	        <form:textarea path="email"/>
+	        <form:input  path="email"/>
 	    </p>
 	    <p>
 	        <form:label path="password">password</form:label>
@@ -81,7 +84,7 @@ pageEncoding="ISO-8859-1"%>
 	        <form:input type="password" path="password"/>
 	    </p>  
 
-	    <input type="submit" value="Submit"/>
+	    <input type="submit" class="btn btn-primary"value="Submit"/>
 	</form:form>   
 </body>
 </html>

@@ -31,42 +31,56 @@ public class userController {
     
     @PostMapping("/register")
     public String register(@Valid @ModelAttribute("newUser") User newUser, 
-            BindingResult result, Model model, HttpSession session) {
+            BindingResult result,
+            Model model,
+            HttpSession session) {
         
-        
-        // to do some extra validations and create a new user!
-        
+   	 User user = userService.register(newUser, result);
+   	 
         if(result.hasErrors()) {
-            // Be sure to send in the empty LoginUser before 
-            // re-rendering the page.
             model.addAttribute("newLogin", new LoginUser());
             return "index.jsp";
         }
-        
-        // No errors! 
-        // TO-DO Later: Store their ID from the DB in session, 
-        // in other words, log them in.
-    
-        return "redirect:/home";
+        	
+        else { 
+       	 session.setAttribute("userId", user.getId());
+       	 session.setAttribute("userName", user.getUserName());
+       	 return "redirect:/home";
+        }
     }
-    
+    @GetMapping("/home")
+    public String successPage(HttpSession session, Model model) {
+   	    if (session.getAttribute("userId") == null) {
+   	        return "redirect:/";
+   	    }
+   	    else {
+   	    	 return "welcome.jsp";
+   	    }
+   	
+    }
     @PostMapping("/login")
     public String login(@Valid @ModelAttribute("newLogin") LoginUser newLogin, 
             BindingResult result, Model model, HttpSession session) {
         
-        // Add once service is implemented:
-        // User user = userServ.login(newLogin, result);
+         User user = userService.login(newLogin, result);
     
         if(result.hasErrors()) {
             model.addAttribute("newUser", new User());
             return "index.jsp";
         }
     
-        // No errors! 
-        // TO-DO Later: Store their ID from the DB in session, 
-        // in other words, log them in.
-    
+        session.setAttribute("userId", user.getId());
+      	 session.setAttribute("userName", user.getUserName());
         return "redirect:/home";
     }
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        // Clear the user's session
+        session.invalidate();
+        
+        // Redirect the user to the login and registration page
+        return "redirect:/";
+    }
+    
     
 }
