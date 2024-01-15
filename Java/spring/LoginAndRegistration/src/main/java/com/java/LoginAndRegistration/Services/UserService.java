@@ -30,7 +30,6 @@ public class UserService {
 			return userRepository.save(newUser);
 			}
 
-    
     public User login(LoginUser newLoginObject, BindingResult result) {
        
         return null;
