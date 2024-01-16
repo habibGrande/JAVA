@@ -30,12 +30,13 @@ public class userController {
     }
     
     @PostMapping("/register")
-    public String register(@Valid @ModelAttribute("newUser") User newUser, 
+    public String register(
+    		@Valid @ModelAttribute("newUser") User newUser, 
             BindingResult result,
             Model model,
             HttpSession session) {
         
-   	 User user = userService.register(newUser, result);
+   	 		User user = userService.register(newUser, result);
    	 
         if(result.hasErrors()) {
             model.addAttribute("newLogin", new LoginUser());
